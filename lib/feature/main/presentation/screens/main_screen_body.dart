@@ -40,22 +40,47 @@ class _MainScreenBodyState extends State<MainScreenBody> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Row(
-          children: [
-            Expanded(
-              flex: 3,
-              child: SizedBox(
-                child: SideMenuScreen(onItemTapped: _onItemTapped),
-              ),
-            ),
-            Expanded(
-              flex: 7,
-              child: SizedBox(
-                child: _screens[_selectedIndex],
-              ),
-            ),
-          ],
+        child: LayoutBuilder(
+          builder: (context, constraints) {
+            if (constraints.maxWidth > 600) {
+              // Desktop Or Web
+              return Row(
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: SizedBox(
+                      child: SideMenuScreen(onItemTapped: _onItemTapped),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 7,
+                    child: SizedBox(
+                      child: _screens[_selectedIndex],
+                    ),
+                  ),
+                ],
+              );
+            } else {
+              return Stack(
+                children: [
+                  _screens[_selectedIndex],
+                  Positioned(
+                      top: 0,
+                      left: 0,
+                      child: IconButton(
+                        onPressed: () {
+                          Scaffold.of(context).openDrawer();
+                        },
+                        icon: const Icon(Icons.menu),
+                      ))
+                ],
+              );
+            }
+          },
         ),
+      ),
+      drawer: Drawer(
+        child: SideMenuScreen(onItemTapped: _onItemTapped),
       ),
     );
   }

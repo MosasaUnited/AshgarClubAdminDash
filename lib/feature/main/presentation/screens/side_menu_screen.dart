@@ -23,9 +23,15 @@ class _SideMenuScreenState extends State<SideMenuScreen> {
 
     return Padding(
       padding: EdgeInsets.symmetric(vertical: 70.h, horizontal: 5.w),
-      child: ListView.builder(
-        itemCount: data.menu.length,
-        itemBuilder: (context, index) => buildMenuEntry(data, index),
+      child: Column(
+        children: [
+          Expanded(
+            child: ListView.builder(
+              itemCount: data.menu.length,
+              itemBuilder: (context, index) => buildMenuEntry(data, index),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -38,19 +44,27 @@ class _SideMenuScreenState extends State<SideMenuScreen> {
           selectIndex = index;
         });
         widget.onItemTapped(index);
+        if (MediaQuery.of(context).size.width <= 600) {
+          Navigator.of(context).pop();
+        }
       },
       child: Row(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 13, vertical: 7),
+            padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 14.h),
             child: SizedBox(
-                height: 30.h, width: 30.w, child: data.menu[index].icon),
+              height: 30.h,
+              width: 30.w,
+              child: data.menu[index].icon,
+            ),
           ),
-          Text(
-            data.menu[index].title,
-            style: Styles.textStyle6.copyWith(
-              color: isSelected ? MyColors.myYellow : MyColors.appColor,
-              fontWeight: isSelected ? FontWeight.w900 : FontWeight.normal,
+          Flexible(
+            child: Text(
+              data.menu[index].title,
+              style: Styles.textStyle6.copyWith(
+                color: isSelected ? MyColors.myYellow : MyColors.appColor,
+                fontWeight: isSelected ? FontWeight.w900 : FontWeight.normal,
+              ),
             ),
           ),
         ],
