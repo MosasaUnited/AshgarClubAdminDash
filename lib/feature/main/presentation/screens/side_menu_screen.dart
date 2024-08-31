@@ -6,7 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../core/theme/styles.dart';
 
 class SideMenuScreen extends StatefulWidget {
-  const SideMenuScreen({super.key});
+  const SideMenuScreen({super.key, required this.onItemTapped});
+
+  final Function(int) onItemTapped;
 
   @override
   State<SideMenuScreen> createState() => _SideMenuScreenState();
@@ -15,11 +17,12 @@ class SideMenuScreen extends StatefulWidget {
 class _SideMenuScreenState extends State<SideMenuScreen> {
   int selectIndex = 0;
 
+  @override
   Widget build(BuildContext context) {
     final data = SideMenuData();
 
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+      padding: EdgeInsets.symmetric(vertical: 70.h, horizontal: 5.w),
       child: ListView.builder(
         itemCount: data.menu.length,
         itemBuilder: (context, index) => buildMenuEntry(data, index),
@@ -30,9 +33,12 @@ class _SideMenuScreenState extends State<SideMenuScreen> {
   Widget buildMenuEntry(SideMenuData data, int index) {
     final isSelected = selectIndex == index;
     return InkWell(
-      onTap: () => setState(() {
-        selectIndex = index;
-      }),
+      onTap: () {
+        setState(() {
+          selectIndex = index;
+        });
+        widget.onItemTapped(index);
+      },
       child: Row(
         children: [
           Padding(
