@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/theme/styles.dart';
+import '../widgets/add_new_membership.dart';
 
 class MembershipsViewBody extends StatefulWidget {
   const MembershipsViewBody({super.key});
@@ -69,6 +70,13 @@ class _MembershipsViewBodyState extends State<MembershipsViewBody> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 50.h,
+            ),
+            const AddNewMembership(),
+            SizedBox(
+              height: 20.h,
+            ),
             TextField(
               onChanged: (value) {
                 setState(() {
