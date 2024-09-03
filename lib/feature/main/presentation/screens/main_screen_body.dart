@@ -70,14 +70,15 @@ class _MainScreenBodyState extends State<MainScreenBody> {
                   children: [
                     _screens[_selectedIndex],
                     Positioned(
-                        top: 0,
-                        left: 0,
-                        child: IconButton(
-                          onPressed: () {
-                            Scaffold.of(context).openDrawer();
-                          },
-                          icon: const Icon(Icons.menu),
-                        ))
+                      top: 0,
+                      left: 0,
+                      child: IconButton(
+                        onPressed: () {
+                          Scaffold.of(context).openDrawer();
+                        },
+                        icon: const Icon(Icons.menu),
+                      ),
+                    ),
                   ],
                 );
               }
