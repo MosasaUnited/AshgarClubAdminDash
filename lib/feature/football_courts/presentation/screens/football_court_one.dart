@@ -1,5 +1,4 @@
 import 'package:ashgar_club_admin_dash/core/theme/styles.dart';
-import 'package:ashgar_club_admin_dash/feature/football_courts/data/models/court_model.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -7,9 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class FootballCourtOne extends StatefulWidget {
-  const FootballCourtOne({super.key, required this.courts});
-
-  final List<Court> courts;
+  const FootballCourtOne({super.key});
 
   @override
   State<FootballCourtOne> createState() => _FootballCourtOneState();

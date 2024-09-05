@@ -79,9 +79,7 @@ class _FootballCourtsViewBodyState extends State<FootballCourtsViewBody> {
           child: Column(
             children: [
               if (selectedOption == 0)
-                const FootballCourtOne(
-                  courts: [],
-                )
+                const FootballCourtOne()
               else if (selectedOption == 1)
                 const FootballCourtTwo()
               else
