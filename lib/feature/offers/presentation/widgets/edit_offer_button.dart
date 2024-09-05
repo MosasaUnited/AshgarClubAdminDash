@@ -5,18 +5,20 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/routes/app_router.dart';
 import '../../../../core/widgets/custom_button_animation.dart';
 
-class CreateNewOffer extends StatelessWidget {
-  const CreateNewOffer({super.key});
+class EditOfferButton extends StatelessWidget {
+  const EditOfferButton({super.key});
 
   @override
   Widget build(BuildContext context) {
     return CustomButtonAnimation(
       onPressed: () {
-        GoRouter.of(context).push(AppRouter.createOfferScreen);
+        Future.delayed(const Duration(milliseconds: 400), () {
+          GoRouter.of(context).push(AppRouter.editOfferScreen);
+        });
       },
-      color: Colors.red,
+      color: Colors.green,
       child: Text(
-        'Create New Offer',
+        'Edit Offer',
         style: TextStyle(
           fontWeight: FontWeight.w700,
           fontSize: 4.sp,
