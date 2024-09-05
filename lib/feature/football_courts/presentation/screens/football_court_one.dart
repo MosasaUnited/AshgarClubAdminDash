@@ -58,13 +58,19 @@ class _FootballCourtOneState extends State<FootballCourtOne> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Court 1',
-                    style: Styles.textStyle6,
-                  ),
                   const Text(''),
                   // Availability Calendar
                   TableCalendar(
+                    headerStyle: HeaderStyle(
+                      titleCentered: true,
+                      formatButtonVisible: false,
+                      titleTextStyle: Styles.textStyle6.copyWith(
+                        fontSize: 8.sp,
+                        fontWeight: FontWeight.w700,
+                        fontStyle: FontStyle.italic,
+                        color: Colors.grey,
+                      ),
+                    ),
                     selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
                     focusedDay: _selectedDay,
                     firstDay: DateTime.utc(2024, 10, 1),
@@ -110,7 +116,9 @@ class _FootballCourtOneState extends State<FootballCourtOne> {
                           ),
                           child: Text(
                             day.day.toString(),
-                            style: const TextStyle(color: Colors.white),
+                            style: const TextStyle(
+                              color: Colors.white,
+                            ),
                           ),
                         );
                       },
@@ -119,16 +127,46 @@ class _FootballCourtOneState extends State<FootballCourtOne> {
                   const SizedBox(height: 16),
                   Expanded(
                     child: DataTable2(
+                      dataTextStyle: Styles.textStyle6.copyWith(
+                        fontWeight: FontWeight.bold,
+                      ),
                       border: TableBorder.all(),
-                      columns: const [
+                      columns: [
                         DataColumn(
-                          label: Text('Time'),
+                          label: Center(
+                            child: Text(
+                              'Time',
+                              style: Styles.textStyle6.copyWith(
+                                fontSize: 7.sp,
+                                color: Colors.deepPurpleAccent,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
                         ),
                         DataColumn(
-                          label: Text('Status'),
+                          label: Center(
+                            child: Text(
+                              'Status',
+                              style: Styles.textStyle6.copyWith(
+                                fontSize: 7.sp,
+                                color: Colors.deepPurpleAccent,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
                         ),
                         DataColumn(
-                          label: Text('Payment'),
+                          label: Center(
+                            child: Text(
+                              'Payment',
+                              style: Styles.textStyle6.copyWith(
+                                fontSize: 7.sp,
+                                color: Colors.deepPurpleAccent,
+                                fontWeight: FontWeight.w900,
+                              ),
+                            ),
+                          ),
                         ),
                       ],
                       rows: List<DataRow>.generate(
@@ -140,8 +178,13 @@ class _FootballCourtOneState extends State<FootballCourtOne> {
                             orElse: () => hour,
                           );
                           return DataRow(cells: [
-                            DataCell(Text(DateFormat('h:mm a').format(
-                                DateFormat('HH:mm').parse(hour['time'])))),
+                            DataCell(
+                              Text(
+                                DateFormat('h:mm a').format(
+                                  DateFormat('HH:mm').parse(hour['time']),
+                                ),
+                              ),
+                            ),
                             DataCell(
                               Text(
                                 event?['status'] == 'available'
