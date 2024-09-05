@@ -13,7 +13,7 @@ class SideMenuData {
     SideMenuModel(
         icon: Image.asset(IconAssets.swimmingCourts), title: 'Swimming Courts'),
     SideMenuModel(
-        icon: Image.asset(IconAssets.techSupport), title: 'Tennis Courts'),
+        icon: Image.asset(IconAssets.tennisCourts), title: 'Tennis Courts'),
     SideMenuModel(
         icon: Image.asset(IconAssets.offers), title: 'Special Offers'),
     SideMenuModel(
