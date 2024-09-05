@@ -75,15 +75,19 @@ class _FootballCourtsViewBodyState extends State<FootballCourtsViewBody> {
         SizedBox(
           height: 20.h,
         ),
-        Column(
-          children: [
-            if (selectedOption == 0)
-              const FootballCourtOne()
-            else if (selectedOption == 1)
-              const FootballCourtTwo()
-            else
-              const FootballCourtThree()
-          ],
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              if (selectedOption == 0)
+                const FootballCourtOne(
+                  courts: [],
+                )
+              else if (selectedOption == 1)
+                const FootballCourtTwo()
+              else
+                const FootballCourtThree()
+            ],
+          ),
         ),
       ],
     );
