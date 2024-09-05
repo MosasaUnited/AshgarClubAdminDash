@@ -199,19 +199,21 @@ class _TennisCourtOneState extends State<TennisCourtThree> {
                                 ),
                               ),
                             ),
-                            DataCell(event?['status'] == 'booked'
-                                ? Text(
-                                    event?['paid'] ? 'Paid' : 'Unpaid',
-                                    style: TextStyle(
-                                      color: event?['paid']
-                                          ? Colors.green
-                                          : Colors.red,
-                                      fontSize: 6.sp,
-                                    ),
-                                  )
-                                : event?['status'] == 'Available'
-                                    ? const Text('Paid')
-                                    : const Text('Not Paid')),
+                            DataCell(
+                              event?['status'] == 'booked'
+                                  ? Text(
+                                      event?['paid'] ? 'Paid' : 'Unpaid',
+                                      style: TextStyle(
+                                        color: event?['paid']
+                                            ? Colors.green
+                                            : Colors.red,
+                                        fontSize: 6.sp,
+                                      ),
+                                    )
+                                  : event?['status'] == 'Available'
+                                      ? const Text('Paid')
+                                      : const Text('Not Paid'),
+                            ),
                           ]);
                         },
                       ),
