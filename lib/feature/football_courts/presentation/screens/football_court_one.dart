@@ -55,7 +55,6 @@ class _FootballCourtOneState extends State<FootballCourtOne> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(''),
                   // Availability Calendar
                   TableCalendar(
                     headerStyle: HeaderStyle(
