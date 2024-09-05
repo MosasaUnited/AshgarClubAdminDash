@@ -6,9 +6,10 @@ import 'package:ashgar_club_admin_dash/feature/memberships/presentation/membersh
 import 'package:ashgar_club_admin_dash/feature/notifications/presentation/notifications_view.dart';
 import 'package:ashgar_club_admin_dash/feature/offers/presentation/offers_view.dart';
 import 'package:ashgar_club_admin_dash/feature/swimming_courts/presentation/swimming_courts_view.dart';
-import 'package:ashgar_club_admin_dash/feature/technical_support/presentation/technical_support_view.dart';
 import 'package:ashgar_club_admin_dash/feature/x_pay/presentation/x_pay_view.dart';
 import 'package:flutter/material.dart';
+
+import '../../../tennis_courts/presentation/tennis_courts_view.dart';
 
 class MainScreenBody extends StatefulWidget {
   const MainScreenBody({super.key});
@@ -25,9 +26,9 @@ class _MainScreenBodyState extends State<MainScreenBody> {
     const MembershipsView(),
     const FootballCourtsView(),
     const SwimmingCourtsView(),
+    const TennisCourtsView(),
     const OffersView(),
     const NotificationsView(),
-    const TechnicalSupportView(),
     const XPayView(),
   ];
 

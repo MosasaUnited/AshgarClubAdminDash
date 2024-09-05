@@ -7,17 +7,17 @@ class SideMenuData {
   final menu = [
     SideMenuModel(icon: Image.asset(IconAssets.home), title: 'Home'),
     SideMenuModel(
-        icon: Image.asset(IconAssets.notifications), title: 'Memberships'),
+        icon: Image.asset(IconAssets.memberships), title: 'Memberships'),
     SideMenuModel(
         icon: Image.asset(IconAssets.footballCourts), title: 'Football Courts'),
     SideMenuModel(
         icon: Image.asset(IconAssets.swimmingCourts), title: 'Swimming Courts'),
     SideMenuModel(
+        icon: Image.asset(IconAssets.techSupport), title: 'Tennis Courts'),
+    SideMenuModel(
         icon: Image.asset(IconAssets.offers), title: 'Special Offers'),
     SideMenuModel(
         icon: Image.asset(IconAssets.notifications), title: 'Notify Member'),
-    SideMenuModel(
-        icon: Image.asset(IconAssets.techSupport), title: 'Technical Support'),
     SideMenuModel(
         icon: Image.asset(IconAssets.xPayNotify), title: 'X Pay Notifications'),
   ];
