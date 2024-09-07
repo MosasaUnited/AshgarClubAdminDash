@@ -1,5 +1,8 @@
+import 'package:ashgar_club_admin_dash/core/widgets/app_text_form_field.dart';
+import 'package:ashgar_club_admin_dash/core/widgets/custom_button_animation.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NotificationsViewBody extends StatefulWidget {
   const NotificationsViewBody({super.key});
@@ -18,24 +21,76 @@ class _NotificationsViewBodyState extends State<NotificationsViewBody> {
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            TextFormField(
-              controller: _recipientController,
-              decoration: const InputDecoration(
-                labelText: 'Recipient ID',
-                hintText: 'Enter the recipient \'s unique ID',
-              ),
+            AppTextFormField(
+                contentPadding: const EdgeInsets.all(16),
+                controller: _recipientController,
+                hintText: 'Enter the recipient\'s unique ID',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please Enter the recipient \'s unique ID';
+                  }
+                }),
+            SizedBox(
+              height: 15.h,
             ),
-            TextFormField(
-              controller: _messageController,
-              decoration: const InputDecoration(
-                labelText: 'Message',
+            AppTextFormField(
+                contentPadding:
+                    EdgeInsets.symmetric(horizontal: 50.w, vertical: 100.h),
+                controller: _messageController,
                 hintText: 'Enter the notification message',
-              ),
+                inputTextStyle: TextStyle(
+                  fontSize: 16.sp,
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please Enter the notification message';
+                  }
+                }),
+
+            // TextFormField(
+            //   controller: _messageController,
+            //   decoration: const InputDecoration(
+            //     labelText: 'Message',
+            //     hintText: 'Enter the notification message',
+            //   ),
+            // ),
+            SizedBox(
+              height: 50.h,
             ),
-            ElevatedButton(
-              onPressed: _sendNotification,
+            CustomButtonAnimation(
+              onPressed: () {
+                if (_messageController.value.text.isEmpty ||
+                    _recipientController.value.text.isEmpty) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text(
+                        'The Notification you trying to send is Empty',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                        ),
+                      ),
+                      backgroundColor: Colors.red,
+                    ),
+                  );
+                } else {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(
+                      content: Text(
+                        'The Notification Send Successfully ',
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      backgroundColor: Colors.green,
+                    ),
+                  );
+                }
+              },
               child: const Text('Send Notification'),
             ),
           ],
@@ -44,15 +99,15 @@ class _NotificationsViewBodyState extends State<NotificationsViewBody> {
     );
   }
 
-  Future<void> _sendNotification() async {
+  // Use It When API Ready
+  Future<String?> _sendNotification() async {
     final message = _messageController.text;
     final recipientId = _recipientController.text;
 
     if (message.isEmpty || recipientId.isEmpty) {
       //   handle Empty fields
-      return;
+      return 'Enter the notification message';
     }
-
     try {
       final dio = Dio();
       final response = await dio.post(
@@ -72,5 +127,6 @@ class _NotificationsViewBodyState extends State<NotificationsViewBody> {
     } catch (e) {
       //   Handle Error
     }
+    return null;
   }
 }
