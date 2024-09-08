@@ -45,6 +45,12 @@ dependencies:
   flutter_native_splash: ^2.4.1
   # Newtworking
   dio: ^5.7.0
+  # Image
+  image_picker: ^1.1.2
+  image_picker_for_web: ^3.0.5
+  file_picker: ^8.1.2
+  # Permission
+  permission_handler: ^11.3.1
 
   flutter:
     sdk: flutter

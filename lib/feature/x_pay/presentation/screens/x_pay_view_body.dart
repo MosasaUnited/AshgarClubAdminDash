@@ -151,7 +151,7 @@ class _XPayViewBodyState extends State<XPayViewBody> {
                                             ? Colors.amberAccent
                                             : Colors.blue,
                                 color: transaction.paymentType == 'Fawry'
-                                    ? Colors.black
+                                    ? Colors.grey.shade700
                                     : Colors.white,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -197,6 +197,7 @@ class _XPayViewBodyState extends State<XPayViewBody> {
                                     : transaction.transactionStatus == 'Pending'
                                         ? Colors.amberAccent
                                         : Colors.redAccent,
+                                fontWeight: FontWeight.bold,
                               ),
                               textAlign: TextAlign.center,
                             ),

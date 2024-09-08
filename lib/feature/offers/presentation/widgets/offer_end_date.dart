@@ -1,39 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:intl/intl.dart';
 
-import '../theme/colors.dart';
-import '../theme/styles.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/styles.dart';
 
-class AppTextFormField extends StatelessWidget {
-  const AppTextFormField(
+class OfferEndDate extends StatelessWidget {
+  OfferEndDate(
       {super.key,
       this.contentPadding,
       this.focusedBorder,
       this.enabledBorder,
-      this.inputTextStyle,
-      this.hintStyle,
-      required this.hintText,
-      this.isObscureText,
-      this.suffixIcon,
-      this.backgroundColor,
-      this.controller,
-      required this.validator});
-
+      this.backgroundColor});
   final EdgeInsetsGeometry? contentPadding;
   final InputBorder? focusedBorder;
   final InputBorder? enabledBorder;
-  final TextStyle? inputTextStyle;
-  final TextStyle? hintStyle;
-  final String hintText;
-  final bool? isObscureText;
-  final Widget? suffixIcon;
   final Color? backgroundColor;
-  final TextEditingController? controller;
-  final Function(String?) validator;
+
+  final pickDateController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: controller,
+      controller: pickDateController,
       decoration: InputDecoration(
         isDense: true,
         contentPadding: contentPadding ??
@@ -68,20 +56,48 @@ class AppTextFormField extends StatelessWidget {
           ),
           borderRadius: BorderRadius.circular(16),
         ),
-        hintStyle: Styles.textStyle6.copyWith(
-          color: Colors.grey,
-        ),
-        hintText: hintText,
-        suffixIcon: suffixIcon,
+        hintStyle: Styles.textStyle6.copyWith(color: Colors.grey),
+        hintText: 'Select the End date',
         filled: true,
         fillColor: backgroundColor ?? MyColors.myOffWhite,
       ),
-      obscureText: isObscureText ?? false,
       style: Styles.textStyle14.copyWith(
         color: Colors.black87,
       ),
+      readOnly: true,
       validator: (value) {
-        return validator(value);
+        if (value == null || value.isEmpty) {
+          return 'Please Select the Start date';
+        }
+        return null;
+      },
+      onTap: () async {
+        final selectDate = await showDatePicker(
+          context: context,
+          initialDate: DateTime.now(),
+          firstDate: DateTime.now(),
+          lastDate: DateTime.parse('2038-01-01'),
+        ).then((value) {
+          pickDateController.text = DateFormat.yMMMMEEEEd().format(value!);
+        });
+        if (selectDate != null) {
+          final formattedDate = selectDate.format(context);
+          pickDateController.text = formattedDate;
+        } else if (selectDate.isEmpty) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text(
+                'Date not Selected',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              backgroundColor: Colors.redAccent,
+            ),
+          );
+        }
       },
     );
   }
