@@ -130,6 +130,7 @@ class _TennisCourtOneState extends State<TennisCourtOne> {
                     child: DataTable2(
                       dataTextStyle: Styles.textStyle6.copyWith(
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                       border: TableBorder.all(),
                       columns: [

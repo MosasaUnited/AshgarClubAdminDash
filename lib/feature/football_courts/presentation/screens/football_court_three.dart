@@ -126,6 +126,7 @@ class _FootballCourtThreeState extends State<FootballCourtThree> {
                     child: DataTable2(
                       dataTextStyle: Styles.textStyle6.copyWith(
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                       border: TableBorder.all(),
                       columns: [

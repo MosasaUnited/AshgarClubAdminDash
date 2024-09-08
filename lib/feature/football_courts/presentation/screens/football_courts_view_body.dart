@@ -58,10 +58,10 @@ class _FootballCourtsViewBodyState extends State<FootballCourtsViewBody> {
           padding: const EdgeInsets.all(8),
           borderRadius: BorderRadius.circular(16),
           selectedTextStyle: TextStyle(
-            fontWeight: FontWeight.w900,
-            fontSize: 13.sp,
-            fontStyle: FontStyle.italic,
-          ),
+              fontWeight: FontWeight.w900,
+              fontSize: 13.sp,
+              fontStyle: FontStyle.italic,
+              color: Colors.white),
           unselectedTextStyle: TextStyle(
             fontWeight: FontWeight.w700,
             color: MyColors.myTeal,

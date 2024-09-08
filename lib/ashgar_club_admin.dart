@@ -16,7 +16,7 @@ class AshgarClubAdmin extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Ashgar Club Admin Dashboard',
         themeMode: ThemeMode.system,
-        theme: ThemeDataStyle.light,
+        theme: ThemeDataStyle.dark,
         darkTheme: ThemeDataStyle.dark,
         routerConfig: AppRouter.router,
       ),

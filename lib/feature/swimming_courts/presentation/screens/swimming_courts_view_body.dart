@@ -61,6 +61,7 @@ class _SwimmingCourtsViewBodyState extends State<SwimmingCourtsViewBody> {
             fontWeight: FontWeight.w900,
             fontSize: 13.sp,
             fontStyle: FontStyle.italic,
+            color: Colors.white,
           ),
           unselectedTextStyle: TextStyle(
             fontWeight: FontWeight.w700,

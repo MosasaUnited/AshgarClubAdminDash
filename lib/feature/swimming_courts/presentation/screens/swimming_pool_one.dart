@@ -136,6 +136,7 @@ class _SwimmingPoolOneState extends State<SwimmingPoolOne> {
                     child: DataTable2(
                       dataTextStyle: Styles.textStyle6.copyWith(
                         fontWeight: FontWeight.bold,
+                        color: Colors.white,
                       ),
                       border: TableBorder.all(),
                       columns: [

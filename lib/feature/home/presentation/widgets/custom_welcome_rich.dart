@@ -10,7 +10,9 @@ class CustomWelcomeRich extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: 'Welcome ',
-        style: Styles.textStyle20,
+        style: Styles.textStyle20.copyWith(
+          color: Colors.white,
+        ),
         children: [
           TextSpan(
             text: 'Admin',
