@@ -18,7 +18,7 @@ This App describes the Ashgar Club app's admin dashboard functionality, designed
 ## Home Screen
 The home screen serves as a central hub for essential information and quick actions.
 
- Overview:
+Overview:
 
 ### Key Performance Indicators (KPIs):
 Total members
@@ -32,7 +32,7 @@ Event updates
 Payment transactions
 Quick Actions:
 
-Buttons for creating:
+### Buttons for creating:
 New memberships
 Events
 Special offers
@@ -42,15 +42,15 @@ Send notifications
 Memberships Screen
 Manage all member information and subscriptions effectively.
 
-### Membership List:
+## Membership List:
 
-Table or list view of all memberships:
+### Table or list view of all memberships:
 Member details
 Membership type
 Expiration date
 Payment status
 
-Filters to search memberships by:
+### Filters to search memberships by:
 Member details
 Membership type
 Status
@@ -68,9 +68,9 @@ Modify memberships
 Courts Screen
 Manage court availability and bookings with ease.
 
-### Court List:
+## Court List:
 
-Table or list view of all courts:
+### Table or list view of all courts:
 Court name
 Location
 Availability
@@ -78,7 +78,7 @@ Pricing
 Map integration for court location visualization
 Court Details:
 
-Detailed view of each court:
+### Detailed view of each court:
 Court features
 Availability calendar
 Booking history
@@ -88,7 +88,7 @@ Manage court bookings
 Events Screen
 Manage and track event details and registrations.
 
-### Event List:
+## Event List:
 
 Table or list view of all events:
 Event name
@@ -108,7 +108,7 @@ Manage event registrations
 Special Offers Screen
 Create and manage special offers to attract members.
 
-### Offer List:
+## Offer List:
 
 Table or list view of all special offers:
 Offer name
@@ -117,7 +117,7 @@ Discount
 Expiration date
 Offer Details:
 
-Detailed view of each offer:
+### Detailed view of each offer:
 Offer terms and conditions
 Usage statistics
 Options to:
@@ -126,7 +126,7 @@ Edit existing offers
 Notify Member Screen
 Communicate with members effectively through targeted notifications.
 
-### Notification Form:
+## Notification Form:
 
 Compose notifications for members:
 Recipient selection
@@ -141,7 +141,7 @@ Delivery status
 Technical Support Screen
 Manage member support requests efficiently.
 
-### Support Ticket List:
+## Support Ticket List:
 
 Table or list view of all support tickets:
 Ticket status
@@ -160,7 +160,7 @@ Respond to the customer
 Payment Screen
 Track and manage all financial transactions seamlessly.
 
-### Payment History:
+## Payment History:
 
 List of all payment transactions:
 Payment date
@@ -172,6 +172,6 @@ Payment Reconciliation:
 Tools to reconcile payment transactions with accounting records.
 Payment Settings:
 
-Configuration options for:
+## Configuration options for:
 Payment gateways
 Payment processing setting
