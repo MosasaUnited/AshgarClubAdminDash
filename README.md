@@ -2,7 +2,9 @@
 This App describes the Ashgar Club app's admin dashboard functionality, designed to streamline club management.
 
 
-![home](https://github.com/user-attachments/assets/ec92fc00-f657-4d96-ba27-e42fc6f3fa8d  style="display: block; margin-left: auto; margin-right: auto; width: 50%")
+<div style="text-align: center">
+  ![home](https://github.com/user-attachments/assets/ec92fc00-f657-4d96-ba27-e42fc6f3fa8d)
+</div>
 
 ## Home Screen
 The home screen serves as a central hub for essential information and quick actions.
