@@ -3,6 +3,16 @@ This App describes the Ashgar Club app's admin dashboard functionality, designed
 
 
 ![home](https://github.com/user-attachments/assets/ec92fc00-f657-4d96-ba27-e42fc6f3fa8d)
+![football_courts](https://github.com/user-attachments/assets/2edfc0dd-e442-4a25-b3c0-440d155cf6f3)
+![tennis_courts](https://github.com/user-attachments/assets/d8f0f88c-8f9a-48a8-a8a1-e053d9bf5673)
+![swimming_pools](https://github.com/user-attachments/assets/9155c18c-fe40-4680-8574-b4a1dab51e23)
+![payment_notification](https://github.com/user-attachments/assets/82a1fc52-056e-401e-95c8-eefd27aec492)
+![offers_screen](https://github.com/user-attachments/assets/1421e9fe-8c67-4ec7-b607-3adae064a183)
+![notify_members](https://github.com/user-attachments/assets/5c477e83-1508-414a-990f-3989d8fecc62)
+![memberships](https://github.com/user-attachments/assets/82cbd51a-3a42-45ab-b158-c20bb0b1a335)
+
+
+
 
 
 ## Home Screen
