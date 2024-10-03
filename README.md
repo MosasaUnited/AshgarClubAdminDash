@@ -1,11 +1,15 @@
 # Ashgar Flutter App Admin Dashboard Screen Ideas
+This App describes the Ashgar Club app's admin dashboard functionality, designed to streamline club management.
 
-Home Screen
+
+![home](https://github.com/user-attachments/assets/ec92fc00-f657-4d96-ba27-e42fc6f3fa8d  style="display: block; margin-left: auto; margin-right: auto; width: 50%")
+
+## Home Screen
 The home screen serves as a central hub for essential information and quick actions.
 
-Overview:
+ Overview:
 
-Key Performance Indicators (KPIs):
+### Key Performance Indicators (KPIs):
 Total members
 Active memberships
 Upcoming events
@@ -27,18 +31,20 @@ Send notifications
 Memberships Screen
 Manage all member information and subscriptions effectively.
 
-Membership List:
+### Membership List:
 
 Table or list view of all memberships:
 Member details
 Membership type
 Expiration date
 Payment status
+
 Filters to search memberships by:
 Member details
 Membership type
 Status
-Membership Details:
+
+### Membership Details:
 
 Detailed view for each member:
 Member information
@@ -51,7 +57,7 @@ Modify memberships
 Courts Screen
 Manage court availability and bookings with ease.
 
-Court List:
+### Court List:
 
 Table or list view of all courts:
 Court name
@@ -71,7 +77,7 @@ Manage court bookings
 Events Screen
 Manage and track event details and registrations.
 
-Event List:
+### Event List:
 
 Table or list view of all events:
 Event name
@@ -91,7 +97,7 @@ Manage event registrations
 Special Offers Screen
 Create and manage special offers to attract members.
 
-Offer List:
+### Offer List:
 
 Table or list view of all special offers:
 Offer name
@@ -109,7 +115,7 @@ Edit existing offers
 Notify Member Screen
 Communicate with members effectively through targeted notifications.
 
-Notification Form:
+### Notification Form:
 
 Compose notifications for members:
 Recipient selection
@@ -124,7 +130,7 @@ Delivery status
 Technical Support Screen
 Manage member support requests efficiently.
 
-Support Ticket List:
+### Support Ticket List:
 
 Table or list view of all support tickets:
 Ticket status
@@ -143,7 +149,7 @@ Respond to the customer
 Payment Screen
 Track and manage all financial transactions seamlessly.
 
-Payment History:
+### Payment History:
 
 List of all payment transactions:
 Payment date
